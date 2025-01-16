@@ -15,6 +15,7 @@ export class WeatherComponent implements OnInit {
   setsun: string = '';
   risesun: string = '';
   weatherCondition: string = '';
+  lang: string = 'fr';
 
   suggestions: string[] = [];
 
@@ -31,12 +32,13 @@ export class WeatherComponent implements OnInit {
       this.errorMessage = 'Veuillez entrer une ville.';
       return;
     }
-    this.weatherService.getWeather(this.city).subscribe({
+    this.weatherService.getWeather(this.city, this.lang).subscribe({
+      // rajout de parametre lang pour en français
       next: (data) => {
         this.weatherData = data;
         this.errorMessage = '';
 
-        // Convertir les timestamps en heures lisibles
+        // Conversion des timestamps ou horodatage en heures lisibles
         let lever = new Date(this.weatherData.sys.sunrise * 1000);
         this.risesun = lever.toLocaleTimeString();
         let coucher = new Date(this.weatherData.sys.sunset * 1000);
