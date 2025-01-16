@@ -1,5 +1,13 @@
 <p></p>
 <div class="container mt-5">
+  <header>
+    <div class="suggestions">
+      <h3>Suggestions :</h3>
+      <ul>
+        <li *ngFor="let suggestion of suggestions">{{ suggestion }}</li>
+      </ul>
+    </div>
+  </header>
   <h1 class="text-center">Application Météo</h1>
   <div class="form-group mt-4">
     <input
