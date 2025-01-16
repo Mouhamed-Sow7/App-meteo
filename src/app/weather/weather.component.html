@@ -1,5 +1,13 @@
 <p></p>
 <div class="container mt-5">
+  <header>
+    <div class="suggestions">
+      <h3>Suggestions :</h3>
+      <ul>
+        <li *ngFor="let suggestion of suggestions">{{ suggestion }}</li>
+      </ul>
+    </div>
+  </header>
   <h1 class="text-center">Application Météo</h1>
   <div class="form-group mt-4">
     <input
@@ -14,9 +22,13 @@
   </div>
   <div *ngIf="weatherData" class="mt-4">
     <h3>Météo à {{ weatherData.name }}</h3>
-    <p>Température : {{ weatherData.main.temp }}°C</p>
+    <p>
+      Coordonnées : {{ weatherData.coord.lon }} E, {{ weatherData.coord.lat }} N
+    </p>
+    <p>Température : {{ weatherData.main.temp }} °C</p>
     <p>Condition : {{ weatherData.weather[0].description }}</p>
-    <p>Humidité : {{ weatherData.main.humidity }}%</p>
+    <p>Humidité : {{ weatherData.main.humidity }} %</p>
+    <p>Niveau de la mer : {{ weatherData.main.sea_level }} hpa</p>
     <p>Vitesse du vent : {{ weatherData.wind.speed }} mph E</p>
     <p>Lever du Soleil: {{ risesun }}</p>
     <p>Couchée du Soleil : {{ setsun }}</p>
