@@ -4,7 +4,8 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router'; //  a inclure pour Import des routes
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { WeatherComponent } from './weather/weather.component'; // Assurez-vous que WeatherComponent existe
+import { WeatherComponent } from './weather/weather.component';
+import { FooterComponent } from './footer/footer.component'; // Assurez-vous que WeatherComponent existe
 
 // Définir les routes
 const routes: Routes = [
@@ -15,13 +16,14 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,        // Déclarez AppComponent
-    WeatherComponent     // Déclarez WeatherComponent
+    WeatherComponent, FooterComponent     // Déclarez WeatherComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes) // Ajoutez le RouterModule avec les routes définies
+    RouterModule.forRoot(routes) ,
+    // Ajoutez le RouterModule avec les routes définies
   ],
   providers: [],
   bootstrap: [AppComponent] // AppComponent doit être le point d'entrée
