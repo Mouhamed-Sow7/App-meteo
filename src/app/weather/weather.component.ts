@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { Suggestion, suggestionsList } from '../shared/suggestion';
+import { regionImages } from '../regions';
 
 @Component({
   selector: 'app-weather',
@@ -15,9 +16,11 @@ export class WeatherComponent implements OnInit {
   setsun: string = '';
   risesun: string = '';
   weatherCondition: string = '';
+  regionImages: string = '';
   lang: string = 'fr';
 
   suggestions: string[] = [];
+  region: any;
 
   constructor(private weatherService: WeatherService) {}
 
@@ -32,6 +35,7 @@ export class WeatherComponent implements OnInit {
       this.errorMessage = 'Veuillez entrer une ville.';
       return;
     }
+    // weather service call
     this.weatherService.getWeather(this.city, this.lang).subscribe({
       // rajout de parametre lang pour en français
       next: (data) => {
@@ -58,6 +62,32 @@ export class WeatherComponent implements OnInit {
         this.errorMessage = 'Ville introuvable ou problème de connexion.';
       },
     });
+    // weather service call end
+    // associé la région à l'image correspondante
+
+    const cityToRegionMapping: { [key: string]: string } = {
+      Dakar: 'Dakar',
+      Rufisque: 'Dakar',
+      'Saint-Louis': 'Saint-Louis',
+      Ndar: 'Saint-louis',
+      Thiès: 'Thiès',
+      Ziguinchor: 'Ziguinchor',
+      Diourbel: 'Diourbel',
+      Louga: 'Louga',
+      Tambacounda: 'Tambacounda',
+      Kolda: 'Kolda',
+      Kédougou: 'Kédougou',
+      Matam: 'Matam',
+      Kaffrine: 'Kaffrine',
+      Kaolack: 'Kaolack',
+      Fatick: 'Fatick',
+      Sédhiou: 'Sédhiou',
+    };
+
+    const regionKey =
+      cityToRegionMapping[this.weatherData.name] || this.weatherData.name;
+    this.regionImages =
+      regionImages[regionKey] || '../../../public/img/Dakar.jpg';
   }
 
   getWeatherCondition(weatherMain: string, temp: number): string {

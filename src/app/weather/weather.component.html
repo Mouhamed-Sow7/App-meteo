@@ -8,6 +8,7 @@
       </ul>
     </div>
   </header>
+
   <h1 class="text-center">Application Météo</h1>
   <div class="form-group mt-4">
     <input
@@ -33,6 +34,10 @@
     <p>Lever du Soleil: {{ risesun }}</p>
     <p>Couchée du Soleil : {{ setsun }}</p>
   </div>
+  <div>
+    <img class="images-region" [src]="regionImages" class="img-fluid mt-3" />
+  </div>
+
   <div *ngIf="errorMessage" class="alert alert-danger mt-4">
     {{ errorMessage }}
   </div>
