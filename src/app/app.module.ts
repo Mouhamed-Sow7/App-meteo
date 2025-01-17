@@ -5,27 +5,23 @@ import { RouterModule, Routes } from '@angular/router'; //  a inclure pour Impor
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { WeatherComponent } from './weather/weather.component';
-import { FooterComponent } from './footer/footer.component'; // Assurez-vous que WeatherComponent existe
+import { FooterComponent } from './footer/footer.component';
 
 // Définir les routes
 const routes: Routes = [
   { path: '', component: WeatherComponent }, // Route par défaut
-  { path: '**', redirectTo: '' } // Redirection pour les routes inconnues
+  { path: '**', redirectTo: '' }, // Redirection pour les routes inconnues
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,        // Déclarez AppComponent
-    WeatherComponent, FooterComponent     // Déclarez WeatherComponent
-  ],
+  declarations: [AppComponent, WeatherComponent, FooterComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes) ,
-    // Ajoutez le RouterModule avec les routes définies
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent] // AppComponent doit être le point d'entrée
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

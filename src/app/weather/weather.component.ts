@@ -50,7 +50,7 @@ export class WeatherComponent implements OnInit {
 
         this.weatherCondition = this.getWeatherCondition(weatherMain, temp);
 
-        // Obtenir les suggestions
+        //  les suggestions
         this.suggestions = this.getSuggestions(this.weatherCondition);
       },
       error: (err) => {

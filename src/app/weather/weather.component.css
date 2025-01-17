@@ -1,10 +1,66 @@
-header {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-header .suggestions ul {
-  font-size: 1.1em;
+.suggestions ul {
+  font-size: 1.2em;
   list-style: none;
+}
+.suggestions h3 {
+  text-align: center;
+  font-weight: 700;
+}
+/* centrage */
+/* Contenu de la carte */
+.conteneur-cart {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  z-index: 1000;
+  margin: 25px;
+  background-image: url(../../../public/images/cover.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden; /*pour que le pseudo ne deborde pas sur le parent*/
+}
+
+.conteneur-cart::before {
+  content: "";
+  position: absolute; /* pour recouvrir entièrement le parent */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(14, 10, 10, 0.405);
+  backdrop-filter: blur(1px);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.box-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.weather-info p {
+  margin: 5px 0;
+}
+.suggestions {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  color: #2c2727;
+  max-width: 400px;
+  z-index: 1000;
+  background-image: url(../../../public/images/suggestion.jpg);
+  background-position: center;
 }
