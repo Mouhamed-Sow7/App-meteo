@@ -1,14 +1,14 @@
 <p></p>
-<div class="container mt-5">
+<div class="container mt-5    align-items-center">
   <h1 class="text-center">Application Météo</h1>
-  <div class="form-group mt-4">
+  <div class="form-group mt-4 d-flex  justify-content-center align-items-center">
     <input
       [(ngModel)]="city"
-      class="form-control"
+      class="form-control w-50"
       placeholder="Entrez une ville"
       required
     />
-    <button (click)="getWeather()" class="btn btn-primary mt-3">
+    <button (click)="getWeather()" class="btn btn-primary  d-flex align-items-center">
       Rechercher
     </button>
   </div>
