@@ -16,13 +16,14 @@ export class WeatherComponent implements OnInit {
   risesun: string = '';
   weatherCondition: string = '';
   lang: string = 'fr';
-
+  todayDate: string = '';
   suggestions: string[] = [];
 
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
-    this.getWeather(); // Chargement par défaut
+    this.getWeather();
+    this.setTodayDate();
   }
   getWeather(): void {
     if (!this.city || this.city.trim() === '') {
@@ -59,7 +60,16 @@ export class WeatherComponent implements OnInit {
       },
     });
   }
-
+  setTodayDate(): void {
+    const today = new Date();
+    // Format de la date : Jour Mois Année (exemple : 17 Janvier 2025)
+    this.todayDate = today.toLocaleDateString('fr-FR', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  }
   getWeatherCondition(weatherMain: string, temp: number): string {
     if (temp > 30) {
       return 'hot';

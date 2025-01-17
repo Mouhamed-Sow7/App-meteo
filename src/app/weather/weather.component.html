@@ -26,6 +26,10 @@
             Coordonnées : {{ weatherData.coord.lon }} E,
             {{ weatherData.coord.lat }} N
           </p>
+          <div class="date-container">
+            <p>Date d'aujourd'hui : {{ todayDate }}</p>
+          </div>
+
           <p>Température : {{ weatherData.main.temp }} °C</p>
           <p>Condition : {{ weatherData.weather[0].description }}</p>
           <p>Humidité : {{ weatherData.main.humidity }} %</p>
