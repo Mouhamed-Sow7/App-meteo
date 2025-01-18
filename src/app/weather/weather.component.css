@@ -1,12 +1,10 @@
 /* Box-Data : Centrage et Alignement */
 .box-data {
-  display: flex;
-  flex-direction: column;
-  /* Aligner les éléments en colonne */
-  justify-content: center; /* Centrer verticalement */
-  align-items: center; /* Centrer horizontalement */
-  margin-top: 20px; /* Espacement supérieur */
-  gap: 20px; /* Espacement entre les colonnes */
+  position: relative !important; /* le conteneur est positionné */
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative !important;
 }
 
 /* Contenu de la carte météorologique */
@@ -23,19 +21,6 @@
   overflow: hidden;
   max-width: 500px; /* Limiter la largeur */
   width: 100%; /* Occuper toute la largeur disponible */
-}
-
-.weather-info::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(14, 10, 10, 0.5);
-  backdrop-filter: blur(1px);
-  border-radius: 8px;
-  z-index: -1;
 }
 
 /* Suggestions */
@@ -57,7 +42,6 @@
   font-size: 1.2em;
   list-style: none;
   padding: 0;
-  color: #ffffff;
 
   text-align: center; /* Centrer le texte */
 }
