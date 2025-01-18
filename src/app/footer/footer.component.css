@@ -22,8 +22,10 @@ a {
 .footer-social {
   display: flex;
   justify-content: center;
+  /* background-color: black; */
 }
 .footer-social a {
+  
   font-size: 28px;
   padding: 10px;
   margin: 10px;
@@ -63,4 +65,18 @@ h2-propo,
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and(max-width:576px) {
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+  }
+  .footer-social a {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+  }
+  
 }
