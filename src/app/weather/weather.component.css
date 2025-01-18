@@ -1,66 +1,87 @@
-.suggestions ul {
-  font-size: 1.2em;
-  list-style: none;
+/* Box-Data : Centrage et Alignement */
+.box-data {
+  display: flex;
+  flex-direction: column;
+  /* Aligner les éléments en colonne */
+  justify-content: center; /* Centrer verticalement */
+  align-items: center; /* Centrer horizontalement */
+  margin-top: 20px; /* Espacement supérieur */
+  gap: 20px; /* Espacement entre les colonnes */
 }
-.suggestions h3 {
-  text-align: center;
-  font-weight: 700;
-}
-/* centrage */
-/* Contenu de la carte */
-.conteneur-cart {
-  position: relative;
+
+/* Contenu de la carte météorologique */
+.weather-info {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 500px;
-  color: rgb(255, 255, 255);
-  font-size: 1.2rem;
-  z-index: 1000;
-  margin: 25px;
   background-image: url(../../../public/images/cover.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden; /*pour que le pseudo ne deborde pas sur le parent*/
+  background-size: cover; /* Faire couvrir toute la surface */
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  max-width: 500px; /* Limiter la largeur */
+  width: 100%; /* Occuper toute la largeur disponible */
 }
 
-.conteneur-cart::before {
+.weather-info::before {
   content: "";
-  position: absolute; /* pour recouvrir entièrement le parent */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(14, 10, 10, 0.405);
+  background-color: rgba(14, 10, 10, 0.5);
   backdrop-filter: blur(1px);
   border-radius: 8px;
   z-index: -1;
 }
 
-.box-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.weather-info h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.weather-info p {
-  margin: 5px 0;
-}
+/* Suggestions */
 .suggestions {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  color: #2c2727;
-  max-width: 400px;
-  z-index: 1000;
   background-image: url(../../../public/images/suggestion.jpg);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Faire couvrir toute la surface */
+  color: #2c2727;
+  max-width: 600px; /* Limiter la largeur */
+  width: 100%; /* Occuper toute la largeur disponible */
+}
+
+/* Contenu de Suggestions */
+.suggestions ul {
+  font-size: 1.2em;
+  list-style: none;
+  padding: 0;
+  color: #ffffff;
+
+  text-align: center; /* Centrer le texte */
+}
+
+.suggestions h3 {
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Formulaire et Boutons */
+.form-group {
+  gap: 10px; /* Espacement entre le champ de texte et le bouton */
+}
+
+/* Ajustement Global */
+ul {
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.alert {
+  text-align: center;
+  font-size: 1rem;
 }
