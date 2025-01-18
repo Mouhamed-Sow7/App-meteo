@@ -17,6 +17,10 @@
       >
         Rechercher
       </button>
+      <p>
+        Date actuelle : {{ todayDate }} - Heure actuelle :
+        {{ currentTime }}
+      </p>
     </div>
     <div class="box-data mt-5">
       <div *ngIf="weatherData" class="row">
@@ -29,7 +33,10 @@
               {{ weatherData.coord.lat }} N
             </p>
             <div class="date-container">
-              <p>Date d'aujourd'hui : {{ todayDate }}</p>
+              <p>
+                Date actuelle : {{ todayDate }} - Heure actuelle :
+                {{ currentTime }}
+              </p>
             </div>
             <p>
               <i class="fa-solid fa-temperature-three-quarters"></i> :
