@@ -1,9 +1,9 @@
-h1{
-    display: flex;
-    justify-content: center;
-    color: #fff;
-    padding: 12px;
-    margin: 0px 30%;
+h1 {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  padding: 12px;
+  margin: 0px 30%;
 }
 .background-container {
     width: 100%;
@@ -16,6 +16,6 @@ h1{
    
      
 }
- h1{
-    color: #fff;
+h1 {
+  color: #fff;
 }
