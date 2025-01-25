@@ -66,6 +66,9 @@ h2-propo,
   justify-content: center;
   align-items: center;
 }
+.text-secondary{
+  background-color: #333;
+}
 
 @media screen and(max-width:576px) {
   .footer-social {
@@ -76,6 +79,7 @@ h2-propo,
   .footer-social a {
     display: flex;
     justify-content: center;
+    background-color: #333;
     color: #fff;
   }
   
