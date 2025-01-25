@@ -38,20 +38,20 @@
               <i class="fa-solid fa-temperature-three-quarters"></i> :
               {{ weatherData.main.temp }} °C
             </p>
-            <p>Condition : {{ weatherData.weather[0].description }}</p>
+            <p><i class="fa-solid fa-cloud-rain"></i> : {{ weatherData.weather[0].description }}</p>
             <p>
               <i class="fa-solid fa-droplet"></i> :
               {{ weatherData.main.humidity }} %
             </p>
-            <p>Niveau de la mer : {{ weatherData.main.sea_level }} hpa</p>
+            <p><i class="fa-solid fa-water"></i> : {{ weatherData.main.sea_level }} hpa</p>
             <p>
-              <i class="fa-solid fa-wind"></i> vitesse du vent:
+              <i class="fa-solid fa-wind"></i> :
               {{ weatherData.wind.speed }} mph E
             </p>
             <p>
-              <i class="fa-solid fa-cloud-sun"></i>Lever du Solei: {{ risesun }}
+              <i class="fa-solid fa-cloud-sun"></i> : {{ risesun }}
             </p>
-            <p>Couchée du Soleil : {{ setsun }}</p>
+            <p><i class="fa-solid fa-sun"></i> : {{ setsun }}</p>
           </div>
         </div>
 
