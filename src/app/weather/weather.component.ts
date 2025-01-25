@@ -1,14 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { Suggestion, suggestionsList } from '../shared/suggestion';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
   standalone: false,
   styleUrls: ['./weather.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class WeatherComponent implements OnInit, OnDestroy {
+export class WeatherComponent implements OnInit {
   // Propriétés du composant
   city: string = 'Dakar'; // Ville sélectionnée pour récupérer la météo
   weatherData: any = null; // Données météo récupérées de l'API
@@ -18,9 +20,12 @@ export class WeatherComponent implements OnInit, OnDestroy {
   weatherCondition: string = ''; // Condition météo actuelle
   lang: string = 'fr'; // Langue pour les données météo (par défaut, français)
   todayDate: string = ''; // Date du jour au format lisible
-  suggestions: string[] = []; // Suggestions basées sur la condition météo
-  currentTime: string = ''; // Heure actuelle
-  private timer: any; // Référence pour le setInterval (timer pour l'heure actuelle)
+  suggestions: string[] = [];
+  // Suggestions basées sur la condition météo
+  // currentTime: string = '';
+  // Heure actuelle
+  // private timer: any;
+  // Référence pour le setInterval (timer pour l'heure actuelle)
 
   // Constructeur : Injection du service météo
   constructor(private weatherService: WeatherService) {}
@@ -36,20 +41,20 @@ export class WeatherComponent implements OnInit, OnDestroy {
     this.setTodayDate(); // Initialisation de la date du jour
 
     // Initialisation d'un timer pour mettre à jour l'heure actuelle
-    this.timer = setInterval(() => {
-      this.currentTime = new Date().toLocaleTimeString('fr-FR');
-    }, 1000);
+    // this.timer = setInterval(() => {
+    //   this.currentTime = new Date().toLocaleTimeString('fr-FR');
+    // }, 1000);
   }
 
   /**
    * Méthode appelée lorsque le composant est détruit.
    * - Nettoie le timer pour éviter les fuites de mémoire.
    */
-  ngOnDestroy(): void {
-    if (this.timer) {
-      clearInterval(this.timer); // Arrêt du timer
-    }
-  }
+  // ngOnDestroy(): void {
+  //   if (this.timer) {
+  //     clearInterval(this.timer); // Arrêt du timer
+  //   }
+  // }
 
   /**
    * Récupère les données météo pour la ville sélectionnée.

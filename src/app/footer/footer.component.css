@@ -25,25 +25,28 @@ a {
   /* background-color: black; */
 }
 .footer-social a {
-  
   font-size: 28px;
   padding: 10px;
   margin: 10px;
 }
 
 .contact {
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 h2 {
   margin-top: 0;
 }
-.contact p {
+.contact-links {
   font-size: 20px;
   padding: 0 17px;
-  margin: 0 19px;
+  margin: 5px 19px;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 .a-propos {
   justify-content: center;
@@ -54,12 +57,15 @@ h2 {
   padding: 0 auto;
   margin: 8px 25px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-content: center;
 }
+.parant-p p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
 
-h2-propo,
+.h2-propo,
 .propos {
   /* width: 60%; */
   display: flex;
@@ -82,5 +88,4 @@ h2-propo,
     background-color: #333;
     color: #fff;
   }
-  
 }

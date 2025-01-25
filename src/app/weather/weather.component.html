@@ -17,10 +17,6 @@
       >
         Rechercher
       </button>
-      <p>
-        Date actuelle : {{ todayDate }} - Heure actuelle :
-        {{ currentTime }}
-      </p>
     </div>
     <div class="box-data mt-5">
       <div *ngIf="weatherData" class="row">
@@ -34,8 +30,8 @@
             </p>
             <div class="date-container">
               <p>
-                Date actuelle : {{ todayDate }} - Heure actuelle :
-                {{ currentTime }}
+                Date actuelle : {{ todayDate }}
+                <!-- {{ currentTime }} -->
               </p>
             </div>
             <p>
@@ -49,10 +45,12 @@
             </p>
             <p>Niveau de la mer : {{ weatherData.main.sea_level }} hpa</p>
             <p>
-              <i class="fa-solid fa-wind"></i>: {{ weatherData.wind.speed }} mph
-              E
+              <i class="fa-solid fa-wind"></i> vitesse du vent:
+              {{ weatherData.wind.speed }} mph E
             </p>
-            <p><i class="fa-solid fa-cloud-sun"></i>: {{ risesun }}</p>
+            <p>
+              <i class="fa-solid fa-cloud-sun"></i>Lever du Solei: {{ risesun }}
+            </p>
             <p>Couchée du Soleil : {{ setsun }}</p>
           </div>
         </div>

@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router'; //  a inclure pour Import des routes
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HttpClientModule,
+  withFetch,
+  provideHttpClient,
+} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { WeatherComponent } from './weather/weather.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,7 +25,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [provideHttpClient(withFetch())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
