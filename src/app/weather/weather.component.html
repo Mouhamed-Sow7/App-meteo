@@ -1,9 +1,11 @@
 <div class="bg">
   <header></header>
-  <div class="container mt-5 align-items-center">
-    <h1 class="text-center">Application Météo</h1>
+  <div class="container mt-5">
+    <h1 class="text-center logo-t">Baobab Weather</h1>
+
+    <!-- Formulaire de recherche -->
     <div
-      class="form-group mt-4 d-flex justify-content-center align-items-center"
+      class="form-group mt-4 d-flex justify-content-center align-items-center slide_left"
     >
       <input
         [(ngModel)]="city"
@@ -12,67 +14,62 @@
         placeholder="Entrez une ville"
         required
       />
-      <button
-        (click)="getWeather()"
-        class="btn btn-primary d-flex align-items-center ms-2"
-      >
+      <button (click)="getWeather()" class="btn btn-primary ms-2">
         Rechercher
       </button>
     </div>
+
+    <!-- Section des données météo et suggestions -->
     <div class="box-data mt-5">
-      <div *ngIf="weatherData" class="row">
-        <!-- Colonne pour les informations météorologiques -->
-        <div class="col-md-6 col-12">
-          <div class="weather-info card p-4 shadow">
-            <h3 class="card-title">Météo à {{ weatherData.name }}</h3>
-            <p class="card-text">
-              Coordonnées : {{ weatherData.coord.lon }} E,
-              {{ weatherData.coord.lat }} N
+      <div *ngIf="weatherData" class="weather-suggestions">
+        <!-- Informations météo -->
+        <div class="weather-info p-4 shadow">
+          <h3 class="card-title">Météo à {{ weatherData.name }}</h3>
+          <p class="card-text">
+            Coordonnées : {{ weatherData.coord.lon }} E,
+            {{ weatherData.coord.lat }} N
+          </p>
+          <div class="date-container">
+            <div>Date actuelle : {{ todayDate }}</div>
+            <p>
+              <i class="fa-solid fa-temperature-three-quarters"></i> :
+              {{ weatherData.main.temp }} °C
             </p>
-            <div class="date-container">
-              <div>Date actuelle : {{ todayDate }}</div>
-              <p>
-                <i class="fa-solid fa-temperature-three-quarters"></i> :
-                {{ weatherData.main.temp }} °C
-              </p>
-              <p>
-                <i class="fa-solid fa-cloud-rain"></i> :
-                {{ weatherData.weather[0].description }}
-              </p>
-              <p>
-                <i class="fa-solid fa-droplet"></i> :
-                {{ weatherData.main.humidity }} %
-              </p>
-              <p>
-                <i class="fa-solid fa-water"></i> :
-                {{ weatherData.main.sea_level }} hpa
-              </p>
-              <p>
-                <i class="fa-solid fa-wind"></i> :
-                {{ weatherData.wind.speed }} mph E
-              </p>
-              <p><i class="fa-solid fa-cloud-sun"></i> : {{ risesun }}</p>
-              <p><i class="fa-solid fa-sun"></i> : {{ setsun }}</p>
-            </div>
-          </div>
-
-          <!-- Colonne pour les suggestions -->
-          <div class="col-md-6 col-12 mt-4">
-            <div class="suggestions card p-4 shadow">
-              <h3 class="card-title">Suggestions :</h3>
-              <ul>
-                <li *ngFor="let suggestion of suggestions">
-                  {{ suggestion }}
-                </li>
-              </ul>
-            </div>
+            <p>
+              <i class="fa-solid fa-cloud-rain"></i> :
+              {{ weatherData.weather[0].description }}
+            </p>
+            <p>
+              <i class="fa-solid fa-droplet"></i> :
+              {{ weatherData.main.humidity }} %
+            </p>
+            <p>
+              <i class="fa-solid fa-water"></i> :
+              {{ weatherData.main.sea_level }} hpa
+            </p>
+            <p>
+              <i class="fa-solid fa-wind"></i> :
+              {{ weatherData.wind.speed }} mph E
+            </p>
+            <p><i class="fa-solid fa-cloud-sun"></i> : {{ risesun }}</p>
+            <p><i class="fa-solid fa-sun"></i> : {{ setsun }}</p>
           </div>
         </div>
 
-        <!-- Gestion des erreurs -->
-        <div *ngIf="errorMessage" class="alert alert-danger mt-4">
-          {{ errorMessage }}
+        <!-- Suggestions -->
+        <div class="suggestions p-4 shadow">
+          <h3>Suggestions :</h3>
+          <ul>
+            <li *ngFor="let suggestion of suggestions">
+              {{ suggestion }}
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <!-- Gestion des erreurs -->
+      <div *ngIf="errorMessage" class="alert alert-danger mt-4">
+        {{ errorMessage }}
       </div>
     </div>
   </div>
