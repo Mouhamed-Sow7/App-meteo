@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import { Suggestion, suggestionsList } from '../shared/suggestion';
+import { suggestionsList } from '../shared/suggestion';
 import { ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -21,11 +21,6 @@ export class WeatherComponent implements OnInit {
   lang: string = 'fr'; // Langue pour les données météo (par défaut, français)
   todayDate: string = ''; // Date du jour au format lisible
   suggestions: string[] = [];
-  // Suggestions basées sur la condition météo
-  // currentTime: string = '';
-  // Heure actuelle
-  // private timer: any;
-  // Référence pour le setInterval (timer pour l'heure actuelle)
 
   // Constructeur : Injection du service météo
   constructor(private weatherService: WeatherService) {}
@@ -34,27 +29,10 @@ export class WeatherComponent implements OnInit {
    * Méthode appelée lors de l'initialisation du composant.
    * - Récupère la météo pour la ville sélectionnée.
    * - Définit la date du jour.
-   * - Met à jour l'heure actuelle toutes les secondes.
    */
   ngOnInit(): void {
     this.getWeather(); // Récupération des données météo
-    this.setTodayDate(); // Initialisation de la date du jour
-
-    // Initialisation d'un timer pour mettre à jour l'heure actuelle
-    // this.timer = setInterval(() => {
-    //   this.currentTime = new Date().toLocaleTimeString('fr-FR');
-    // }, 1000);
   }
-
-  /**
-   * Méthode appelée lorsque le composant est détruit.
-   * - Nettoie le timer pour éviter les fuites de mémoire.
-   */
-  // ngOnDestroy(): void {
-  //   if (this.timer) {
-  //     clearInterval(this.timer); // Arrêt du timer
-  //   }
-  // }
 
   /**
    * Récupère les données météo pour la ville sélectionnée.
