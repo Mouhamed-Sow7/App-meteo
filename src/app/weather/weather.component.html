@@ -24,13 +24,18 @@
       <div *ngIf="weatherData" class="weather-suggestions">
         <!-- Informations météo -->
         <div class="weather-info p-4 shadow">
-          <h3 class="card-title">Météo à {{ weatherData.name }}</h3>
+          <h3 class="card-title title-center">
+            Météo à {{ weatherData.name }}
+          </h3>
+          <div class="time">
+            {{ todayDate }}, {{ currentTime | date : "HH:mm" }}
+          </div>
+
           <p class="card-text">
             Coordonnées : {{ weatherData.coord.lon }} E,
             {{ weatherData.coord.lat }} N
           </p>
           <div class="date-container">
-            <div>Date actuelle : {{ todayDate }}</div>
             <p>
               <i class="fa-solid fa-temperature-three-quarters"></i> :
               {{ weatherData.main.temp }} °C

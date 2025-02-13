@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { suggestionsList } from '../shared/suggestion';
 import { ViewEncapsulation } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -21,6 +22,7 @@ export class WeatherComponent implements OnInit {
   lang: string = 'fr'; // Langue pour les données météo (par défaut, français)
   todayDate: string = ''; // Date du jour au format lisible
   suggestions: string[] = [];
+  currentTime: Date = new Date();
 
   // Constructeur : Injection du service météo
   constructor(private weatherService: WeatherService) {}
@@ -31,7 +33,12 @@ export class WeatherComponent implements OnInit {
    * - Définit la date du jour.
    */
   ngOnInit(): void {
+    this.setTodayDate(); // Définit la date du jour
     this.getWeather(); // Récupération des données météo
+    this.currentTime;
+    // timer(0, 1000).subscribe(() => {
+    //   this.currentTime = new Date();
+    // });
   }
 
   /**
