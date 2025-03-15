@@ -1,14 +1,28 @@
 /* Box-Data : Conteneur principal */
 .box-data {
-  margin: 20px 0;
+  background-color: rgba(0, 255, 255, 0.374);
+  width: 60%;
 }
-
+.logo-img {
+  height: 140px;
+  background-image: url(../../../public/images/lgo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 /* Disposition des conteneurs météo et suggestions */
 .weather-suggestions {
-  display: flex; /* Alignement côte à côte */
-  flex-wrap: wrap; /* Permet de passer en colonne sur petits écrans */
-  gap: 20px; /* Espacement entre les deux conteneurs */
-  justify-content: center; /* Centrer les conteneurs horizontalement */
+  display: flex;
+  justify-content: space-between;
+  /* width: 60%; */
+  /* Alignement côte à côte */
+  /* flex-wrap: wrap; */
+  /* Permet de passer en colonne sur petits écrans */
+  /* gap: 20px; */
+  /* Espacement entre les deux conteneurs */
+  /* justify-content: center; */
+  /* margin: 0 auto; */
+  /* Centrer les conteneurs horizontalement */
 }
 .time {
   display: flex;
@@ -23,33 +37,40 @@
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #fff;
+  color: black;
   padding-bottom: 10px;
 }
 /* Conteneur météo */
 .weather-info {
-  flex: 1 1 45%; /* Occupe environ 45% de l'espace disponible */
-  max-width: 600px; /* Largeur maximale */
-  background-image: url(../../../public/images/cover.jpg);
+  /* flex: 1 1 45%;  */
+  /* display: flex; */
+  /* Occupe environ 45% de l'espace disponible */
+  /* max-width: 70%; */
+  /* gap: 20px; */
+  /* Largeur maximale */
+  /* background-image: url(../../../public/images/cover.jpg); */
+  /* background-color: rgba(0, 255, 255, 0.374); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #ffffff;
+  color: #000;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 /* Conteneur suggestions */
 .suggestions {
   max-width: fit-content; /* Largeur maximale */
-  background-image: url(../../../public/images/suggestion.jpg);
+  /* background-color: greenyellow; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #2c2727;
+  color: #000;
+  font-weight: bold;
   height: fit-content;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 /* Liste des suggestions */
@@ -68,11 +89,13 @@
   animation: slideLeft 1s ease-in-out forwards;
   animation-delay: calc(var(--seconde) * 0.5s);
   opacity: 0;
+  color: #000;
 }
 
 .suggestions h3 {
   text-align: center;
   font-weight: bold;
+  color: #fff;
 }
 
 /* Formulaire */
