@@ -1,6 +1,6 @@
 /* Box-Data : Conteneur principal */
 .box-data {
-  background-color: rgba(0, 255, 255, 0.374);
+  background-color: rgba(0, 255, 255, 0.504);
   width: 60%;
 }
 .logo-img {
@@ -58,7 +58,13 @@
   font-size: 1rem;
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
-
+.weather-info p {
+  font-size: 1.2rem;
+}
+.weather-info i {
+  padding-left: 5px;
+  color: red;
+}
 /* Conteneur suggestions */
 .suggestions {
   max-width: fit-content; /* Largeur maximale */
